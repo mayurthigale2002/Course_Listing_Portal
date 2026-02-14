@@ -45,6 +45,9 @@ app.use((req, res) => {
   res.status(404).render("404");
 });
 
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+const PORT = 3000
+const HOST = "localhost";
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server is running at http://${HOST}:${PORT}`);
 });
