@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Courses</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+<%- include("../partials/navbar") %>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4 fw-bold">Our Courses</h1>
+
+  <div class="row mt-3">
+    <%- courses.map(course => `
+      <div class="col-md-3 mb-4 mt-4">
+        <div class="card shadow h-100 border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">${course.name}</h5>
+            <p class="card-text text-muted">
+              Duration: ${course.duration}<br>
+              Fees: ₹${course.fees}
+            </p>
+            <a href="/course/${course.id}" class="btn btn-success w-100">
+              View Details
+            </a>
+          </div>
+        </div>
+      </div>
+    `).join("") %>
+  </div>
+</div>
+
+<%- include("../partials/footer") %>
+
+</body>
+</html>
